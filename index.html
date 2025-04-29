@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Sharma - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+            position: relative;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .header-content {
+            margin-top: 1rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background-color: white;
+            color: #4CAF50;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        nav {
+            background: #333;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            animation: fadeIn 1.5s;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            transform: translateY(-3px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4CAF50;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.4s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
+        section:nth-child(4) { animation-delay: 0.8s; }
+        section:nth-child(5) { animation-delay: 1s; }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4CAF50;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        h2:hover::after {
+            transform: scaleX(1);
+        }
+
+        .project, .skill, .certification, .contact {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .project:hover, .skill:hover, .certification:hover, .contact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideDown {
+            from {transform: translateY(-100%);}
+            to {transform: translateY(0);}
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.05);}
+            100% {transform: scale(1);}
+        }
+
+        .project h3, .skill p, .certification p, .contact p {
+            transition: all 0.3s ease;
+        }
+
+        .project:hover h3, .skill:hover p, .certification:hover p, .contact:hover p {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="profile-container">
+        <img src="images/profile.jpg" alt="Abhinav Sharma" class="profile-photo">
+        <div class="header-content">
+            <h1>Abhinav Sharma</h1>
+            <p>AI/ML Enthusiast | C++ Programmer | Tech Learner</p>
+            <a href="documents/cv.pdf" class="download-btn" download>Download CV</a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="project">
+        <p>Motivated and detail-oriented AI/ML enthusiast with a strong foundation in machine learning, deep learning, and data analysis. Passionate about applying Python, TensorFlow, and AI algorithms to real-world challenges.</p>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Currency Converter</h3>
+        <p>Developed a C++ program that converts currency values between different international currencies based on real-time exchange rates.</p>
+    </div>
+    <div class="project">
+        <h3>Calculator</h3>
+        <p>Built a user-friendly C++ calculator application with efficient computation handling.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+        <p><strong>Programming:</strong> C++</p>
+        <p><strong>Frameworks:</strong> HTML, CSS</p>
+        <p><strong>Databases/Cloud:</strong> AWS</p>
+        <p><strong>Tools:</strong> GitHub</p>
+        <p><strong>Operating Systems:</strong> Linux, Windows</p>
+    </div>
+</section>
+
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certification">
+        <p>Data Structures and Algorithms Course by GeeksforGeeks (Completed in 2024)</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact">
+        <p><strong>Email:</strong> Officialabhinavsharma98@gmail.com</p>
+        <p><strong>Phone:</strong> +91 98171 27048</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abhinavsharma" target="_blank">linkedin.com/in/abhinavsharma</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/abhinavsharam" target="_blank">github.com/abhinavsharam</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Abhinav Sharma. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
